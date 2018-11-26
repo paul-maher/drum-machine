@@ -350,7 +350,7 @@ class DrumMachine:
 	        	elif routine==2:
 	        	        _self.playRhythm2()
 	        	elif routine==3:
-       		 	        _self.playRhythm3()
+				_self.playRhythm3()
 	        	elif routine==4:
         	        	_self.playRhythm4()
         		elif routine==5:
