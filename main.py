@@ -1,9 +1,12 @@
 from drummachine import DrumMachine
+import time 
 
 # Create a new drum machine object
 dm = DrumMachine()
 
-#dm.thump(6,10)
+#dm.thump(4,10)
 #dm.testAll()
 
-dm.playRhythm10()
+#dm.playRhythm7()
+
+dm.playRandomRhythm(4)

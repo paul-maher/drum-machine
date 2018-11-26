@@ -1,6 +1,7 @@
 
 import RPi.GPIO as GPIO
 import time
+import random 
 
 # Degfine a class to control the drum machines
 class DrumMachine:
@@ -337,4 +338,33 @@ class DrumMachine:
                 	_self.thump(2,1)
                 	_self.thump(3,1)
                 	_self.thump(4,2)
+
+	def playRandomRhythm(_self, count):
+
+		for n in range(count):
+
+		        routine = random.randint(1,10)
+	
+		        if routine==1:
+	        	        _self.playRhythm1()
+	        	elif routine==2:
+	        	        _self.playRhythm2()
+	        	elif routine==3:
+       		 	        _self.playRhythm3()
+	        	elif routine==4:
+        	        	_self.playRhythm4()
+        		elif routine==5:
+        	        	_self.playRhythm5()
+        		elif routine==6:
+        	        	_self.playRhythm6()
+        		elif routine==7:
+        	        	_self.playRhythm7()
+        		elif routine==8:
+        	        	_self.playRhythm8()
+	        	elif routine==9:
+        	        	_self.playRhythm9()
+        		elif routine==10:
+        	        	_self.playRhythm10()
+
+
 
