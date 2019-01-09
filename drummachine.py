@@ -90,10 +90,17 @@ class DrumMachine:
 		for n in range(3):
 			_self.thump(6, 2)
 
-	# And the rhythm section (see wat I  did there :)
-	def playRhythm1(_self):
+	def showName(methodToCall):
 
-	        print("Rhythm 1")
+		def header(_self):
+			print('Playing {}'.format(str(methodToCall).split()[1]))
+			methodToCall(_self)
+
+		return header
+
+	# And the rhythm section (see wat I  did there :)
+	@showName
+	def playRhythm1(_self):
 
 	        for loop in range(0,4):
 	                for n in range(0,2):
@@ -105,10 +112,8 @@ class DrumMachine:
 	                        _self.thump(4,1)
 	                        _self.thump(5,1)
 	                time.sleep(0.05)
-
+	@showName
 	def playRhythm2(_self):
-
-        	print("Rhythm 2")
 
         	for loop in range(0,4):
                 	_self.thump(5,1)
@@ -121,9 +126,8 @@ class DrumMachine:
                         	_self.thump(0,1)
                         	_self.thump(3,1)
 
+	@showName
 	def playRhythm3(_self):
-
-        	print("Rhythm 3")
 
         	for n in range(0,8):
                 	_self.thump(6,1)
@@ -134,9 +138,8 @@ class DrumMachine:
                 	for n in range(0,6):
                         	_self.thump(4,1)
 
+	@showName
 	def playRhythm4(_self):
-
-        	print("Rhythm 4")
 
 	        for n in range(0,6):
         	        _self.thump(1,1)
@@ -147,9 +150,9 @@ class DrumMachine:
         	        _self.thump(3,0)
         	        _self.thump(2,1)
 
+	@showName
 	def playRhythm5(_self):
 
-        	print("Rhythm 5")
         	for n in range(10,0,-1):
         	        _self.thump(4,n)
         	        _self.thump(5,n)
@@ -170,10 +173,8 @@ class DrumMachine:
         	        _self.thump(1,0)
         	        _self.thump(0,0)
 
-
+	@showName
 	def playRhythm6(_self):
-
-        	print("Rhythm 6")
 
 	        for n in range(1,8):
         	        _self.thump(3,1)
@@ -194,9 +195,8 @@ class DrumMachine:
                 	_self.thump(4,0)
         	_self.thump(2,20)
 
+	@showName
 	def playRhythm7(_self):
-
-        	print("Rhythm 7")
 
 	        for loop in range(0,4):
         	        for n in range(0,4):
@@ -216,10 +216,8 @@ class DrumMachine:
 	        _self.thump(2,1)
 	        _self.thump(2,3)
 
-
+	@showName
 	def playRhythm8(_self):
-
-        	print("Rhythm 8")
 
         	_self.thump(6,4)
         	_self.thump(6,20)
@@ -305,10 +303,8 @@ class DrumMachine:
 
 	        _self.thump(1,8)
 
-
+	@showName
 	def playRhythm9(_self):
-
-	        print("Rhythm 9")
 
 	        for n in range(0,3):
 	                _self.thump(1,1)
@@ -327,9 +323,8 @@ class DrumMachine:
 	                _self.thump(2,1)
 	                _self.thump(3,1)
 
+	@showName
 	def playRhythm10(_self):
-
-        	print("Rhythm 10")
 
         	for n in range(0,8):
                 	_self.bassDrum();
@@ -339,18 +334,18 @@ class DrumMachine:
                 	_self.thump(3,1)
                 	_self.thump(4,2)
 
-	def playRandomRhythm(_self, count):
+	def doPlayRandomRhythm(_self, count):
 
 		for n in range(count):
 
 		        routine = random.randint(1,10)
-	
+
 		        if routine==1:
 	        	        _self.playRhythm1()
 	        	elif routine==2:
 	        	        _self.playRhythm2()
 	        	elif routine==3:
-				_self.playRhythm3()
+	        	        _self.playRhythm3()
 	        	elif routine==4:
         	        	_self.playRhythm4()
         		elif routine==5:
